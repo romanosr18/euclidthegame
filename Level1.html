@@ -40,21 +40,24 @@ You unlocked a new tool: Constructing equilateral triangles! Go to <a href="/Lev
 <script type="text/javascript">
 {% include testobjects.js %}
 
-checkobject("pointtop",-0.4,0.3);
-checkobject("pointbottom",-0.4,-0.3);
+checkobject("pointtop",1,3);
+checkobject("pointbottom",1,-3);
 //checkobject("circleleft");
 //checkobject("circleright");
-checksegment("segmentLB",-1.1,0);
+checksegment("segmentLB",-2,1);
 checksegment("segmentRB",0,0);
-checksegment("segmentLT",-1.1,0);
+checksegment("segmentLT",-2,1);
 checksegment("segmentRT",0,0);
 	
 if (drawn("pointtop") || drawn("pointbottom")) {  
-	Command('progress = 33');
+	Command('progress = 25');
 	}
 
-if (drawn("segmentLT") || drawn("segmentLB") || drawn("segmentRB") ||  drawn("segmentRT")){
-	Command('progress = 66');
+if (drawn("segmentLT") || drawn("segmentLB")) {
+	Command('progress = 50')
+}
+if (drawn("segmentRB") ||  drawn("segmentRT")){
+	Command('progress = 75');
    }
 
 LevelCompleted((drawn("segmentLT") && drawn("segmentRT")) || (drawn("segmentLB") && drawn("segmentRB")),4);
